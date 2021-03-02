@@ -1,4 +1,6 @@
-# Návrh jazyka
+# Překladač
+
+## Návrh jazyka
 
 Jazyk kalkulačky
 
