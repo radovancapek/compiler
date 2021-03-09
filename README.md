@@ -13,12 +13,18 @@ Jazyk kalkulačky
 - float y
 - boolean z
 
+#### Operátory
+
+- +, -, *, /, (, ), [, ]
+
 #### Funkce
 
-- sčítání, odčítání, násobení, dělení, závorky
-- absolutní hodnota
+- absolutní hodnota: abs(a)
+- mocnina: pow(a, n)
+- odmocnina: sqrt(a)
+- rozklad na prvočísla: fact(a)
 
 #### Správný výraz
 
-((a+a-b)*a/b) + abs(a-b)
+((a+a-b)*a/b) + abs(a-b) - pow(a, 3)
 
