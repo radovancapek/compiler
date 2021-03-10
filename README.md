@@ -7,7 +7,7 @@ Jazyk kalkulačky
 #### Datové typy
 - int 32
 - float 32
-- boolean 1
+- boolean 1 (true / false)
 #### Deklarace proměnných
 - int x
 - float y
