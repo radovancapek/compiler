@@ -20,7 +20,7 @@ Jazyk kalkulačky
 
 1) +, -
 2) *, /
-3) =
+3) 
 - přednost má vyšší priorita
 - při stejné prioritě zleva doprava
 
