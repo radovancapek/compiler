@@ -65,3 +65,5 @@ fact_fun ::= fact(u_int)
 op ::= add_op | mult_op
 
 fun ::= abs_fun | pow_fun | fact_fun
+
+expr ::= num {op (num | fun)}
