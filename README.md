@@ -37,7 +37,7 @@ Jazyk kalkulačky
 
 ## Gramatika
 
-non_zero_digit ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+non_zero_digit ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
 digit ::= "0" | non-zero-digit
 
