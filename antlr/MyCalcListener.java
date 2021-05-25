@@ -1,3 +1,8 @@
+import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.tree.ErrorNode;
+
+import java.util.Stack;
+
 public class MyCalcListener extends CalcBaseListener {
     Stack<Number> stack = new Stack();
 
@@ -105,8 +110,11 @@ public class MyCalcListener extends CalcBaseListener {
         Float num2 = Float.valueOf(stack.pop().getValue());
         if(ctx.op.getType() == CalcParser.MUL)
             stack.push(new Number(Type.FLOAT, String.valueOf(num1*num2)));
-        if(ctx.op.getType() == CalcParser.DIV)
-            stack.push(new Number(Type.FLOAT, String.valueOf(num2/num1)));
+        if(ctx.op.getType() == CalcParser.DIV) {
+            if(num1 != 0) stack.push(new Number(Type.FLOAT, String.valueOf(num2/num1)));
+            else System.err.println("Dělení nulou.");
+        }
+
         super.exitMulDiv(ctx);
     }
 }
