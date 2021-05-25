@@ -1,8 +1,3 @@
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.tree.ErrorNode;
-
-import java.util.Stack;
-
 public class MyCalcListener extends CalcBaseListener {
     Stack<Number> stack = new Stack();
 
