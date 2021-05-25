@@ -2,20 +2,18 @@ grammar Calc;
 
 start: (expr  (NL | DELIMITER))* ;
 
-expr:   expr (MUL | DIV) expr
-    |   expr (ADD | SUB) expr
-    |   'abs(' expr ')'
-    |   'pow(' (INT | FLOAT)',' INT ')'
-    |   'fact(' INT ')'
-    |   INT
-    |   FLOAT
-    |   BOOLEAN
-    |   '('expr')'
+expr:   expr op=(MUL | DIV) expr   #mulDiv
+    |   expr op=(ADD | SUB) expr   #addSub
+    |   'fact(' expr ')' #fact
+    |   'abs(' expr ')' #abs
+    |   'pow(' expr',' expr ')' #pow
+    |   INT #int
+    |   FLOAT #float
+    |   '('expr')' #braces
     ;
 
 INT :       ('0') | NON_ZERO_DIGIT DIGIT* ;
 FLOAT :     INT ('.' DIGIT+) ;
-BOOLEAN :   '0' | '1' ;
 
 MUL: '*' ;
 DIV: '/' ;
