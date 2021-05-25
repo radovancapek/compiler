@@ -56,12 +56,28 @@ public class MyCalcListener extends CalcBaseListener {
         else return(n * factorial(n-1));
     }
 
+    private List<Integer> factorsOf(int number) {
+        List<Integer> list = new ArrayList<>();
+        for(int i = 2; i< number; i++) {
+            while(number%i == 0) {
+                list.add(i);
+                number = number/i;
+            }
+        }
+        if(number >2) {
+            list.add(number);
+        }
+        return list;
+    }
+
     @Override
     public void exitFact(CalcParser.FactContext ctx) {
         Number number = this.stack.pop();
         if(number.getType().equals(Type.INT) && (Integer.parseInt(number.getValue()) >= 0)) {
             int num = Integer.parseInt(number.getValue());
-            this.stack.push(new Number(Type.INT, String.valueOf(factorial(num))));
+            for(Integer n : factorsOf(num)) {
+                this.stack.push(new Number(Type.INT, String.valueOf(n)));
+            }
         } else {
             System.err.println("Vstup není nezáporný integer.");
         }
